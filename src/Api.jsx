@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import axios from 'axios';
 import "./Api.css";
 
+const url = "https://skeetbot.xyz/api";
+
 export default class API extends Component {
     constructor() {
         super();
@@ -18,7 +20,7 @@ export default class API extends Component {
     }
 
     getUser = () => {
-        axios.get(`http://skeetbot.xyz:3000/users/${this.state.targetUser}`, {
+        axios.get(`${url}/users/${this.state.targetUser}`, {
             headers: { "key": this.state.key }
         }).then(res => {
             this.setState({ user: res.data[0], users: [] });
@@ -28,7 +30,7 @@ export default class API extends Component {
     }
 
     getAllUsers = () => {
-        axios.get('http://skeetbot.xyz:3000/users', {
+        axios.get(`${url}/users`, {
             headers: { "key": this.state.key }
         }).then(res => {
             this.setState({ users: res.data, user: {} })
@@ -38,7 +40,7 @@ export default class API extends Component {
     }
 
     getAllBanned = () => {
-        axios.get('http://skeetbot.xyz:3000/banned', {
+        axios.get(`${url}/banned`, {
             headers: { "key": this.state.key }
         }).then(res => {
             this.setState({ user: {}, users: res.data });
@@ -48,7 +50,7 @@ export default class API extends Component {
     }
 
     getAllUserBanned = () => {
-        axios.get('http://skeetbot.xyz:3000/bannedusers', {
+        axios.get(`${url}/bannedusers`, {
             headers: { "key": this.state.key }
         }).then(res => {
             this.setState({ user: {}, users: res.data });
@@ -58,7 +60,7 @@ export default class API extends Component {
     }
 
     getAllIpBanned = () => {
-        axios.get('http://skeetbot.xyz:3000/bannedips', {
+        axios.get(`${url}/bannedips`, {
             headers: { "key": this.state.key }
         }).then(res => {
             this.setState({ user: {}, users: res.data });
