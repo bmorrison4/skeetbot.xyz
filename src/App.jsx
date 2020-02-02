@@ -13,7 +13,7 @@ function App() {
                 <hr />
                 <Switch>
                     <Route path="/" component={Home} exact />
-                    <Route path="/api" component={Api} />
+                    <Route path="/lookup" component={Api} />
                 </Switch>
             </div>
             <footer>
