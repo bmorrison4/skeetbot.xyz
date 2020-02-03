@@ -1,14 +1,24 @@
+
 .buttonTab {
-    height: 50px;
-    width: 700px;
+    height: 25px;
+    width: calc(100vw - 100px);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    align-content: center;
+}
+
+.inputTab {
+    height: 25px;
+    width: calc(100vw - 100px);
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
 }
 
 .apiResponse {
-    width: 700px;
-    height: 355px;
+    width: calc(100vw - 100px);
+    height: calc(100vh - 240px);
     overflow: scroll;
 }
 

@@ -154,6 +154,8 @@ export default class API extends Component {
                     <button onClick={this.getAllBanned}>Get all banned</button>
                     <button onClick={this.getAllIpBanned}>Get all IP Banned</button>
                     <button onClick={this.getAllUserBanned}>Get all username banned</button>
+                </div>
+                <div className="inputTab">
                     <div className="KeyDiv">
                         <label>Key </label>
                         <input type="password" name="key" className="keyInput" value={this.state.key} onChange={(e) => this.handleChange(e)}></input>
