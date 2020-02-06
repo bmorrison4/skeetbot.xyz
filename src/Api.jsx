@@ -17,7 +17,9 @@ export default class API extends Component {
 
     handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value });
-        localStorage.setItem("api_key", e.target.value);
+        if (e.target.name === "key") {
+            localStorage.setItem("api_key", e.target.value);
+        }
     }
 
     getUser = () => {
