@@ -10,13 +10,14 @@ export default class API extends Component {
         this.state = {
             user: {},
             users: [],
-            key: "",
+            key: localStorage.getItem("api_key") || "",
             targetUser: ""
         }
     }
 
     handleChange = (e) => {
-        this.setState({ [e.target.name]: e.target.value })
+        this.setState({ [e.target.name]: e.target.value });
+        localStorage.setItem("api_key", e.target.value);
     }
 
     getUser = () => {
