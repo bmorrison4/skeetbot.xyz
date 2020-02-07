@@ -5,12 +5,15 @@ import Api from "./Api";
 import Wink from "./imgs/wink.gif";
 import "./App.css";
 
+
+
 function App() {
     return (
         <>
             <div className="body">
-                <h1>SkeetBot.XYZ</h1>
-                <hr />
+                <div className="header">
+                    <h1>SkeetBot.XYZ</h1>
+                </div>
                 <Switch>
                     <Route path="/" component={Home} exact />
                     <Route path="/lookup" component={Api} />

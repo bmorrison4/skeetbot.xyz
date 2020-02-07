@@ -1,26 +1,9 @@
-body {
-  background: url('imgs/tileable_backdrop.jpg');
-  background-repeat: repeat;
-  width: 800px;
-  height: 600px;
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+.content {
+    display: grid;
+    grid-template-columns: 1fr 250px;
 }
 
-.body {
-    margin: auto;
-    width: 700px;
-    height: 500px;
-    background-color: #AAAAAA;
-    border: 5px ridge #CCCCCC;
-}
-
-footer {
-    width: 800px;
-    height: 100px;
-    color: white;
-}
-
-.wink {
-    width: 16px;
-    height: 16px;
+.login-form {
+    border-left: 5px ridge #CCCCCC;
+    height: 100%;
 }
