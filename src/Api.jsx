@@ -24,7 +24,7 @@ export default class API extends Component {
 
     getUser = () => {
         axios.get(`${url}/users/${this.state.targetUser}`, {
-            headers: { "key": this.state.key }
+            headers: { "Authorization": `Bearer ${this.state.key}` }
         }).then(res => {
             this.setState({ user: res.data[0], users: [] });
         }).catch(err => {
@@ -34,7 +34,7 @@ export default class API extends Component {
 
     getAllUsers = () => {
         axios.get(`${url}/users`, {
-            headers: { "key": this.state.key }
+            headers: { "Authorization": `Bearer ${this.state.key}` }
         }).then(res => {
             this.setState({ users: res.data, user: {} })
         }).catch(err => {
@@ -44,7 +44,7 @@ export default class API extends Component {
 
     getAllBanned = () => {
         axios.get(`${url}/banned`, {
-            headers: { "key": this.state.key }
+            headers: { "Authorization": `Bearer ${this.state.key}` }
         }).then(res => {
             this.setState({ user: {}, users: res.data });
         }).catch(err => {
@@ -54,7 +54,7 @@ export default class API extends Component {
 
     getAllUserBanned = () => {
         axios.get(`${url}/bannedusers`, {
-            headers: { "key": this.state.key }
+            headers: { "Authorization": `Bearer ${this.state.key}` }
         }).then(res => {
             this.setState({ user: {}, users: res.data });
         }).catch(err => {
@@ -64,7 +64,7 @@ export default class API extends Component {
 
     getAllIpBanned = () => {
         axios.get(`${url}/bannedips`, {
-            headers: { "key": this.state.key }
+            headers: { "Authorization": `Bearer ${this.state.key}` }
         }).then(res => {
             this.setState({ user: {}, users: res.data });
         }).catch(err => {
