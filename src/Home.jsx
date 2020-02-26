@@ -33,17 +33,18 @@ export default class Home extends React.Component {
 
     render = () => {
         const { stats } = this.state;
-        console.log(stats);
         return (
             <div className="content" >
                 <div className="stats">
-                    {stats.count > 0 ?
+                    {stats.users > 0 ?
                         <>
-                            <p>Total tracked users: {stats.count}</p>
-                            <p>Total banned users: {stats.bans}</p>
+                            <p>Total tracked users: {stats.users}</p>
+                            <p>Total tracked IPs: {stats.ips}</p>
+                            <p>Total banned users: {stats.username_bans + stats.ip_bans}</p>
                             <p>Total username bans: {stats.username_bans}</p>
                             <p>Total IP bans: {stats.ip_bans}</p>
                             <p>Newest seen: {stats.newest_seen}</p>
+                            <p>Newest banned: {stats.newest_banned}</p>
                         </>
                         :
                         <p>Failed to get stats</p>}
