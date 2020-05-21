@@ -90,19 +90,19 @@ export default class API extends Component {
                     </tr>
                     <tr>
                         <th>User-Agent</th>
-                        <td>{this.state.user.useragent}</td>
+                        <td>{this.state.user.useragent.map((ua, idx) => {
+                            return <React.Fragment key={idx}>{ua}<br /></React.Fragment>
+                        })}</td>
                     </tr>
                     <tr>
-                        <th>IP</th>
-                        <td>{this.state.user.ip}</td>
+                        <th>IPs</th>
+                        <td>{this.state.user.ips.map((ip, idx) => {
+                            return <React.Fragment key={idx}>{ip}<br /></React.Fragment>
+                        })}</td>
                     </tr>
                     <tr>
                         <th>Username Banned</th>
                         <td>{this.state.user.username_banned.toString()}</td>
-                    </tr>
-                    <tr>
-                        <th>IP Banned</th>
-                        <td>{this.state.user.ip_banned.toString()}</td>
                     </tr>
                     <tr>
                         <th>Last Seen</th>
@@ -122,9 +122,8 @@ export default class API extends Component {
                         <th>Cores</th>
                         <th>GPU</th>
                         <th>User-Agent</th>
-                        <th>IP</th>
+                        <th>IPs</th>
                         <th>Username Banned</th>
-                        <th>IP Banned</th>
                         <th>Last Seen</th>
                     </tr>
                 </thead>
@@ -135,10 +134,13 @@ export default class API extends Component {
                                 <td>{value.username}</td>
                                 <td>{value.cores}</td>
                                 <td>{value.gpu}</td>
-                                <td>{value.useragent}</td>
-                                <td>{value.ip}</td>
+                                <td>{value.useragent.map((ua, idx) => {
+                                    return <React.Fragment key={idx}>{ua}<br /></React.Fragment>
+                                })}</td>
+                                <td>{value.ips.map((ip, idx) => {
+                                    return <React.Fragment key={idx}>{ip}<br /></React.Fragment>
+                                })}</td>
                                 <td>{value.username_banned.toString()}</td>
-                                <td>{value.ip_banned.toString()}</td>
                                 <td>{value.last_seen}</td>
                             </tr>
                         )

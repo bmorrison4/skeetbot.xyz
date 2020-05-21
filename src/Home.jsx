@@ -40,7 +40,7 @@ export default class Home extends React.Component {
                         <>
                             <p>Total tracked users: {stats.users}</p>
                             <p>Total tracked IPs: {stats.ips}</p>
-                            <p>Total banned users: {stats.username_bans + stats.ip_bans}</p>
+                            <p>Total banned users: {parseInt(stats.username_bans) + parseInt(stats.ip_bans)}</p>
                             <p>Total username bans: {stats.username_bans}</p>
                             <p>Total IP bans: {stats.ip_bans}</p>
                             <p>Newest seen: {stats.newest_seen}</p>
